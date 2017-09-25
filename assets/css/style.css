@@ -4,6 +4,9 @@
  * Made By Joash Pereira
  * Thanks for MaterializeCSS.com
  */
+ #work{
+    display: none;
+ }
 
 .default_color{background-color: #2196F3 !important}
 
@@ -295,3 +298,9 @@ footer.page-footer {
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0);
     }
+table {
+    margin-left: 60px;
+}
+#tour{
+    margin-left: 60px;
+}
