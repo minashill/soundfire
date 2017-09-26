@@ -137,8 +137,8 @@ $(".searchBar").on("submit", function(event) {
   var artist = $(this).find('input').val().trim();
 
   event.preventDefault();
-   // window.location = $('#work');
-
+  // setTimout(function() {)
+   
 
   $("#artist-table tbody").empty();
 
@@ -152,7 +152,7 @@ $(".searchBar").on("submit", function(event) {
   lastFMGetArtistInfo(artist);
   $("#work").css("display", "block");
 
-
+  location.href = "#work"; 
 
 });
 
@@ -160,7 +160,8 @@ $(".searchBar").on("submit", function(event) {
 $('div').on('click','.sugPic', function(event) {
   var artist = $(this).attr("alt");
 
-  
+   event.preventDefault();
+  location.href = "#work";
 
   $("#artist-table tbody").empty();
 
