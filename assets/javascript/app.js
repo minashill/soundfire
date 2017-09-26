@@ -98,7 +98,7 @@ $.get(lastFMGetSimilarArtistsURL)
         // p.attr("display", "none");
         li.append(h3);
         li.append(img);
-        li.addClass('sugPic');
+        img.addClass('sugPic');
         // img.on('mouseenter', function(){
         //   p.slideToggle();
         // });
@@ -130,20 +130,8 @@ function lastFMGetArtistInfo(artist) {
 			$('#bio').html(p);
 		})
 }
-$('.sugPic').on('click', function(event) {
-  var artist = $(this).attr("alt");
-
-  event.preventDefault();
-
-  $("#artist-table tbody").empty();
-
-  getTourSchedule(artist);
-  lastFMSearch(artist);
-  lastFMGetSimilarArtists(artist);  
-  lastFMGetArtistInfo(artist);
 
 
-});
 
 $(".searchBar").on("submit", function(event) {
   var artist = $(this).find('input').val().trim();
@@ -157,7 +145,7 @@ $(".searchBar").on("submit", function(event) {
   // document.getElementById('header').style.display = "block";
   // document.getElementById('results').style.display = "block";
   // document.getElementById('initsearch').style.display = "none";
-
+  
   getTourSchedule(artist);
   lastFMSearch(artist);
   lastFMGetSimilarArtists(artist);  
@@ -165,9 +153,23 @@ $(".searchBar").on("submit", function(event) {
   $("#work").css("display", "block");
 
 
+
 });
 
 
+$('div').on('click','.sugPic', function(event) {
+  var artist = $(this).attr("alt");
 
+  
+
+  $("#artist-table tbody").empty();
+
+  getTourSchedule(artist);
+  lastFMSearch(artist);
+  lastFMGetSimilarArtists(artist);  
+  lastFMGetArtistInfo(artist);
+
+
+});
 
 }); // onReady end

@@ -7,6 +7,9 @@
  #work{
     display: none;
  }
+ #navLogo{
+    width: 7%;
+ }
 
 .default_color{background-color: #2196F3 !important}
 
@@ -303,4 +306,7 @@ table {
 }
 #tour{
     margin-left: 60px;
+}
+.sugPic{
+    cursor: pointer;
 }
