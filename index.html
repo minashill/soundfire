@@ -27,19 +27,21 @@
     <nav id="nav_f" class="default_color" role="navigation">
         <div class="container">
             <div class="nav-wrapper">
-                <img src="assets/img/soundfire1.png" id="navLogo">
-            <a href="#" id="logo-container" class="brand-logo">SoundFire</a>
+                <img src="assets/img/soundfire1.png" id="navLogo" class="homeButton">
+            <a href="#" id="logo-container" class="brand-logo homeButton">SoundFire</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#intro">Start</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#team">Team</a></li>
+                    <li><a class="artButton" href="#artistSearch" target="#artistSearch">Artist</a></li>
+                    <li><a class="venButton" href="#venueSearch" target="#venueSearch">Venue</a></li>
+                    <li><a class="citButton" href="#citySearch" target="#citySearch">City</a></li>
+                    <!-- <li><a href="#work">Work</a></li>
+                    <li><a href="#team">Team</a></li> -->
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="" target="_blank">Download</a></li>
                 </ul>
                 <ul id="nav-mobile" class="side-nav">
-                    <li><a href="#intro">Start</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#team">Team</a></li>
+                    <li><a class="artButton" href="#artistSearch" target="#artistSearch">Artist</a></li>
+                    <li><a class="venButton" href="#venueSearch" target="#venueSearch">Venue</a></li>
+                    <li><a class="citButton" href="#citySearch" target="#citySearch">City</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="" target="_blank">Download</a></li>
                 </ul>
@@ -61,12 +63,14 @@
                 <b>New Events</b>
             </span>
         </h1>
+        <!-- <button class="artButton"><a href="#artTarget">artist</a></button> -->
     </div>
 </div>
 
 
-<!--Intro and service-->
-<div id="intro" class="section scrollspy">
+<!--Artist Search-->
+<!-- <div class="artTarget"></div> -->
+<div id="artistSearch" class="section scrollspy">
     <div class="container">
         <div class="row">
             <div  class="col s12">
@@ -83,8 +87,8 @@
     </div>
 </div>
 
-<!--Work-->
-<div class="section scrollspy" id="work">
+<!--Artist Results-->
+<div class="section scrollspy" id="artistResults">
     <div class="container">
         <div class="row">
             <div class="col s12 m4 l4">
@@ -104,11 +108,11 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">Click for Bio <i class="mdi-navigation-more-vert right"></i></span>
-                        <!-- <p><a href="#">Project link</a></p> -->
+                        
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4" id="bio">Bio<i class="mdi-navigation-close right"></i></span>
-                        <!-- <p>Here is some more information about this project that is only revealed once clicked on.</p> -->
+                        
                     </div>
                 </div>
                     <div class="row"></div>
@@ -163,7 +167,41 @@
     </div>
 </div>
 </div>
+<!--Venue Search-->
+<div id="venueSearch" class="section scrollspy">
+    <div class="container">
+        <div class="row">
+            <div  class="col s12">
+                </div>
+                <h2 class="center header text_h2"> Look up a<span class="span_h2"> Venue  </span></h2>
+            </div>
+                <div class="row center">
 
+          <form method="get" id="search" class="searchBar">
+          <input name="q" type="text" size="40" placeholder="Enter an artist name..." />
+          </form>
+        
+        </div>
+    </div>
+</div>
+
+<!--City Search-->
+<div id="citySearch" class="section scrollspy">
+    <div class="container">
+        <div class="row">
+            <div  class="col s12">
+                </div>
+                <h2 class="center header text_h2"> Find events near a<span class="span_h2"> City  </span></h2>
+            </div>
+                <div class="row center">
+
+          <form method="get" id="search" class="searchBar">
+          <input name="q" type="text" size="40" placeholder="Enter an artist name..." />
+          </form>
+        
+        </div>
+    </div>
+</div>
 <!--Parallax-->
 <div class="parallax-container">
     <div class="parallax"><img src="assets/img/concert2.jpg"></div>

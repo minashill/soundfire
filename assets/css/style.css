@@ -4,11 +4,30 @@
  * Made By Joash Pereira
  * Thanks for MaterializeCSS.com
  */
- #work{
+ #artistResults{
     display: none;
  }
+ #artistSearch{
+    display: none;
+ }
+ 
+ #venueResults{
+    display: none;
+ }
+ #venueSearch{
+    display: none;
+ }
+
+#cityResults{
+    display: none;
+ }
+#citySearch{
+    display: none;
+ }
+
  #navLogo{
     width: 7%;
+    cursor: pointer;
  }
 
 .default_color{background-color: #2196F3 !important}
@@ -289,7 +308,7 @@ footer.page-footer {
     transition: all 0.7s ease 0s;
     }
 #search input[type="text"]:hover{
-    border: 2px solid yellow;
+    border: 2px solid #FF0000;
 
 }
 #search input[type="text"]:focus {

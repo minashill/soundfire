@@ -130,6 +130,64 @@ function lastFMGetArtistInfo(artist) {
 			$('#bio').html(p);
 		})
 }
+//button actions
+
+$(".homeButton").on("click", function(event) {
+  
+  event.preventDefault();
+  $("#index-banner").css("display", "block");
+  $("#artistSearch").css("display", "none");
+  $("#venueSearch").css("display", "none");
+  $("#citySearch").css("display", "none");
+  $("#artistResults").css("display", "none");
+ 
+  
+  location.href = "#artistSearch";
+   
+});
+
+
+$(".artButton").on("click", function(event) {
+  
+  event.preventDefault();
+  $("#artistSearch").css("display", "block");
+  $("#index-banner").css("display", "none");
+  $("#venueSearch").css("display", "none");
+  $("#citySearch").css("display", "none");
+ 
+  
+  location.href = "#artistSearch";
+   
+});
+
+$(".venButton").on("click", function(event) {
+  
+  event.preventDefault();
+  $("#venueSearch").css("display", "block");
+  $("#index-banner").css("display", "none");
+  $("#artistSearch").css("display", "none");
+  $("#citySearch").css("display", "none");
+  $("#artistResults").css("display", "none");
+ 
+  
+  location.href = "#venueSearch";
+   
+});
+
+$(".citButton").on("click", function(event) {
+  
+  event.preventDefault();
+  $("#citySearch").css("display", "block");
+  $("#index-banner").css("display", "none");
+  $("#artistSearch").css("display", "none");
+  $("#venueSearch").css("display", "none");
+  $("#artistResults").css("display", "none");
+ 
+  
+  location.href = "#citySearch";
+   
+});
+//
 
 
 
@@ -150,9 +208,9 @@ $(".searchBar").on("submit", function(event) {
   lastFMSearch(artist);
   lastFMGetSimilarArtists(artist);  
   lastFMGetArtistInfo(artist);
-  $("#work").css("display", "block");
+  $("#artistResults").css("display", "block");
 
-  location.href = "#work"; 
+  location.href = "#artistResults"; 
 
 });
 
@@ -161,7 +219,7 @@ $('div').on('click','.sugPic', function(event) {
   var artist = $(this).attr("alt");
 
    event.preventDefault();
-  location.href = "#work";
+  location.href = "#artistResults";
 
   $("#artist-table tbody").empty();
 
