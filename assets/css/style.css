@@ -329,3 +329,6 @@ table {
 .sugPic{
     cursor: pointer;
 }
+#contact{
+    display: none;
+}

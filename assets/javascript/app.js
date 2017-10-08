@@ -140,7 +140,7 @@ $(".homeButton").on("click", function(event) {
   $("#venueSearch").css("display", "none");
   $("#citySearch").css("display", "none");
   $("#artistResults").css("display", "none");
- 
+  $("#contact").css("display", "none");
   
   location.href = "#artistSearch";
    
@@ -154,7 +154,7 @@ $(".artButton").on("click", function(event) {
   $("#index-banner").css("display", "none");
   $("#venueSearch").css("display", "none");
   $("#citySearch").css("display", "none");
- 
+  $("#contact").css("display", "none");
   
   location.href = "#artistSearch";
    
@@ -168,7 +168,7 @@ $(".venButton").on("click", function(event) {
   $("#artistSearch").css("display", "none");
   $("#citySearch").css("display", "none");
   $("#artistResults").css("display", "none");
- 
+  $("#contact").css("display", "none");
   
   location.href = "#venueSearch";
    
@@ -182,6 +182,22 @@ $(".citButton").on("click", function(event) {
   $("#artistSearch").css("display", "none");
   $("#venueSearch").css("display", "none");
   $("#artistResults").css("display", "none");
+  $("#contact").css("display", "none");
+  
+  location.href = "#citySearch";
+   
+});
+
+$(".contButton").on("click", function(event) {
+  
+  event.preventDefault();
+  $("#contact").css("display", "block");
+  $("#index-banner").css("display", "none");
+  $("#artistSearch").css("display", "none");
+  $("#venueSearch").css("display", "none");
+  $("#artistResults").css("display", "none");
+  $("#citySearch").css("display", "none");
+
  
   
   location.href = "#citySearch";
