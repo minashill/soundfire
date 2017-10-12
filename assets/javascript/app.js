@@ -52,7 +52,7 @@ function getTourSchedule(artist) {
 
 /*Venue Search*/
 function getVenue(venue) {
-  var songKickURL = `http://api.songkick.com/api/3.0/search/venues.json?query=${venue}&apikey=YEZ681bUYQtJ1y2p`;
+  var songKickURL = `https://api.songkick.com/api/3.0/search/venues.json?query=${venue}&apikey=YEZ681bUYQtJ1y2p`;
   console.log(venue);
 
   $.get(songKickURL)
@@ -72,7 +72,7 @@ function getVenue(venue) {
       // resultsPage.results.event
     console.log(venueID);
 
-  var songKickURL2 = `http://api.songkick.com/api/3.0/venues/${venueID}/calendar.json?apikey=YEZ681bUYQtJ1y2p`;
+  var songKickURL2 = `https://api.songkick.com/api/3.0/venues/${venueID}/calendar.json?apikey=YEZ681bUYQtJ1y2p`;
   console.log(venueID);
   console.log(songKickURL2);
 
@@ -102,7 +102,7 @@ function getVenue(venue) {
   }
 // city
 function getCity(city) {
-  var songKickURL3 = `http://api.songkick.com/api/3.0/search/locations.json?query=${city}&apikey={your_api_key}`;
+  var songKickURL3 = `https://api.songkick.com/api/3.0/search/locations.json?query=${city}&apikey={your_api_key}`;
   console.log(city);
 
   $.get(songKickURL3)
@@ -117,7 +117,7 @@ function getCity(city) {
       // resultsPage.results.event
     console.log(areaID);
 
-  var songKickURL2 = `http://api.songkick.com/api/3.0/venues/${venueID}/calendar.json?apikey=YEZ681bUYQtJ1y2p`;
+  var songKickURL2 = `https://api.songkick.com/api/3.0/venues/${venueID}/calendar.json?apikey=YEZ681bUYQtJ1y2p`;
   console.log(venueID);
   console.log(songKickURL2);
 
