@@ -80,7 +80,8 @@ function getVenue(venue) {
       .done(function(response){
         for (var i = 0; i < response.resultsPage.results.event.length; i++) { //On the API, grab the first content of the array to the length of the array
             var row1 = $('<tr>');// On the html table go to the row
-             row1.append(`<td>${response.resultsPage.results.event[i].displayName.slice(0,)}`);// On the row, the first item is the event name 
+             var eventName = response.resultsPage.results.event[i].displayName;
+             row1.append(`<td>${eventName.slice(0, eventName.indexOf('('))}`);// On the row, the first item is the event name 
              var d = response.resultsPage.results.event[i].start.datetime.slice(0,10).split('-');
              var convDate1 = d[1]+'/'+d[2]+'/'+d[0];
              row1.append('<td>'+convDate1);
@@ -102,7 +103,7 @@ function getVenue(venue) {
   }
 // city
 function getCity(city) {
-  var songKickURL3 = `https://api.songkick.com/api/3.0/search/locations.json?query=${city}&apikey={your_api_key}`;
+  var songKickURL3 = `https://api.songkick.com/api/3.0/search/locations.json?query=${city}&apikey=YEZ681bUYQtJ1y2p`;
   console.log(city);
 
   $.get(songKickURL3)
@@ -112,30 +113,31 @@ function getCity(city) {
       var areaID = response.resultsPage.results.location[0].metroArea.id;
       
       var h2 = $('<h2 class="header text_b" >');
-      h2.append(`${cityName},${stateName}`);     
+      h2.append(`${cityName}, ${stateName}`);     
       $("#cit").html(h2);
       // resultsPage.results.event
     console.log(areaID);
 
-  var songKickURL2 = `https://api.songkick.com/api/3.0/venues/${venueID}/calendar.json?apikey=YEZ681bUYQtJ1y2p`;
-  console.log(venueID);
-  console.log(songKickURL2);
+  var songKickURL4 = `https://api.songkick.com/api/3.0/metro_areas/${areaID}/calendar.json?apikey=YEZ681bUYQtJ1y2p`;
+  
+  console.log(songKickURL4);
 
-  $.get(songKickURL2)
+  $.get(songKickURL4)
       .done(function(response){
         for (var i = 0; i < response.resultsPage.results.event.length; i++) { //On the API, grab the first content of the array to the length of the array
             var row1 = $('<tr>');// On the html table go to the row
-             row1.append(`<td>${response.resultsPage.results.event[i].displayName.slice(0,)}`);// On the row, the first item is the event name 
-             var d = response.resultsPage.results.event[i].start.datetime.slice(0,10).split('-');
+            var eventName = response.resultsPage.results.event[i].displayName;
+             row1.append(`<td>${eventName.slice(0, eventName.indexOf('('))}`);// On the row, the first item is the event name 
+             var d = response.resultsPage.results.event[i].start.date.slice(0,).split('-');
              var convDate1 = d[1]+'/'+d[2]+'/'+d[0];
              row1.append('<td>'+convDate1);
              // row.append('<td>' + response[i].datetime);//the second item is the date the gig will play
-             row1.append('<td>'+ response.resultsPage.results.event[i].location.city);//the city in which the venue is. Eg pepsi center is in Denver
+             row1.append('<td>'+ response.resultsPage.results.event[i].venue.displayName);//the city in which the venue is. Eg pepsi center is in Denver
 
              row1.append('<td> <a href="'+ response.resultsPage.results.event[i].uri + '" target="_blank"> Buy Tickets');// Make the content here clickable
 
 
-         $("#venue-table tbody").append(row1);//On the html display all the information
+         $("#city-table tbody").append(row1);//On the html display all the information
          console.log(row1);
      } 
       
