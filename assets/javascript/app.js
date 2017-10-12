@@ -100,8 +100,54 @@ function getVenue(venue) {
 
     });
   }
+// city
+function getCity(city) {
+  var songKickURL3 = `http://api.songkick.com/api/3.0/search/locations.json?query=${city}&apikey={your_api_key}`;
+  console.log(city);
 
-/*Venue Calendar*/
+  $.get(songKickURL3)
+    .done(function(response){
+      var cityName = response.resultsPage.results.location[0].city.displayName;
+      var stateName = response.resultsPage.results.location[0].city.state.displayName;
+      var areaID = response.resultsPage.results.location[0].metroArea.id;
+      
+      var h2 = $('<h2 class="header text_b" >');
+      h2.append(`${cityName},${stateName}`);     
+      $("#cit").html(h2);
+      // resultsPage.results.event
+    console.log(areaID);
+
+  var songKickURL2 = `http://api.songkick.com/api/3.0/venues/${venueID}/calendar.json?apikey=YEZ681bUYQtJ1y2p`;
+  console.log(venueID);
+  console.log(songKickURL2);
+
+  $.get(songKickURL2)
+      .done(function(response){
+        for (var i = 0; i < response.resultsPage.results.event.length; i++) { //On the API, grab the first content of the array to the length of the array
+            var row1 = $('<tr>');// On the html table go to the row
+             row1.append(`<td>${response.resultsPage.results.event[i].displayName.slice(0,)}`);// On the row, the first item is the event name 
+             var d = response.resultsPage.results.event[i].start.datetime.slice(0,10).split('-');
+             var convDate1 = d[1]+'/'+d[2]+'/'+d[0];
+             row1.append('<td>'+convDate1);
+             // row.append('<td>' + response[i].datetime);//the second item is the date the gig will play
+             row1.append('<td>'+ response.resultsPage.results.event[i].location.city);//the city in which the venue is. Eg pepsi center is in Denver
+
+             row1.append('<td> <a href="'+ response.resultsPage.results.event[i].uri + '" target="_blank"> Buy Tickets');// Make the content here clickable
+
+
+         $("#venue-table tbody").append(row1);//On the html display all the information
+         console.log(row1);
+     } 
+      
+
+        //$("#tour").text(artistData);
+      });
+
+    });
+  }
+
+
+
 
 
 /* Initialize Artist Search through LastFM*/
@@ -197,6 +243,7 @@ $(".homeButton").on("click", function(event) {
   $("#artistSearch").css("display", "none");
   $("#venueSearch").css("display", "none");
   $("#citySearch").css("display", "none");
+  $("#cityResults").css("display", "none");
   $("#artistResults").css("display", "none");
   $("#venueResults").css("display", "none");
   $("#contact").css("display", "none");
@@ -214,6 +261,7 @@ $(".artButton").on("click", function(event) {
   $("#venueSearch").css("display", "none");
   $("#venueResults").css("display", "none");
   $("#citySearch").css("display", "none");
+  $("#cityResults").css("display", "none");
   $("#contact").css("display", "none");
   
   location.href = "#artistSearch";
@@ -227,6 +275,7 @@ $(".venButton").on("click", function(event) {
   $("#index-banner").css("display", "none");
   $("#artistSearch").css("display", "none");
   $("#citySearch").css("display", "none");
+  $("#cityResults").css("display", "none");
   $("#venueResults").css("display", "none");
   $("#artistResults").css("display", "none");
   $("#contact").css("display", "none");
@@ -270,7 +319,7 @@ $(".contButton").on("click", function(event) {
 //
 
 
-
+// Artist Search 
 $(".searchBar").on("submit", function(event) {
   var artist = $(this).find('input').val().trim();
 
@@ -291,11 +340,13 @@ $(".searchBar").on("submit", function(event) {
   lastFMGetArtistInfo(artist);
   $("#artistResults").css("display", "block");
   $("#venueResults").css("display", "none");
+  $("#cityResults").css("display", "none");
 
   location.href = "#artistResults"; 
 
 });
 
+// Venue Search 
 $(".vsearchBar").on("submit", function(event) {
   var venue = $(this).find('input').val().trim();
 
@@ -312,11 +363,34 @@ $(".vsearchBar").on("submit", function(event) {
   getVenue(venue);
   $("#venueResults").css("display", "block");
   $("#artistResults").css("display", "none");
+  $("#cityResults").css("display", "none");
 
   location.href = "#venueResults"; 
 
 });
 
+// City Search
+$(".csearchBar").on("submit", function(event) {
+  var city = $(this).find('input').val().trim();
+
+  event.preventDefault();
+  // setTimout(function() {)
+   
+
+  $("#city-table tbody").empty();
+  $("#cit").empty();
+  // document.getElementById('header').style.display = "block";
+  // document.getElementById('results').style.display = "block";
+  // document.getElementById('initsearch').style.display = "none";
+  
+  getCity(city);
+  $("#cityResults").css("display", "block");
+  $("#artistResults").css("display", "none");
+  $("#venueResults").css("display", "none");
+
+  location.href = "#cityResults"; 
+
+});
 
 $('div').on('click','.sugPic', function(event) {
   var artist = $(this).attr("alt");
