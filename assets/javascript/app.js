@@ -82,7 +82,7 @@ function getVenue(venue) {
             var row1 = $('<tr>');// On the html table go to the row
              var eventName = response.resultsPage.results.event[i].displayName;
              row1.append(`<td>${eventName.slice(0, eventName.indexOf('('))}`);// On the row, the first item is the event name 
-             var d = response.resultsPage.results.event[i].start.datetime.slice(0,10).split('-');
+             var d = response.resultsPage.results.event[i].start.date.slice(0,10).split('-');
              var convDate1 = d[1]+'/'+d[2]+'/'+d[0];
              row1.append('<td>'+convDate1);
              // row.append('<td>' + response[i].datetime);//the second item is the date the gig will play
@@ -104,6 +104,7 @@ function getVenue(venue) {
 // city
 function getCity(city) {
   var songKickURL3 = `https://api.songkick.com/api/3.0/search/locations.json?query=${city}&apikey=YEZ681bUYQtJ1y2p`;
+  var songKickUrl3 = '/city/${city}'
   console.log(city);
 
   $.get(songKickURL3)
