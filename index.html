@@ -10,83 +10,91 @@
     <link href="assets/css/style.css" type="text/css" rel="stylesheet">
     <link href="assets/min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="assets/min/custom-min.css" type="text/css" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body id="top" class="scrollspy">
 
-<!-- Pre Loader -->
-<div id="loader-wrapper">
-    <div id="loader"></div>
- 
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
- 
-</div>
+    <!-- Pre Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
 
-<!--Navigation-->
- <div class="navbar-fixed">
-    <nav id="nav_f" class="default_color" role="navigation">
-        <div class="container">
-            <div class="nav-wrapper">
-                <img src="assets/img/soundfire2.png" id="navLogo" class="homeButton">
-            <a href="#" id="logo-container" class="brand-logo homeButton">SoundFire</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a class="artButton" href="#artistSearch" target="#artistSearch">Artist</a></li>
-                    <li><a class="venButton" href="#venueSearch" target="#venueSearch">Venue</a></li>
-                    <li><a class="citButton" href="#citySearch" target="#citySearch">City</a></li>
-                    <!-- <li><a href="#work">Work</a></li>
-                    <li><a href="#team">Team</a></li> -->
-                    <li><a class="contButton" href="#contact" target="#contact">Contact</a></li>
-                    <li><a href="" target="_blank">Download</a></li>
-                </ul>
-                <ul id="nav-mobile" class="side-nav">
-                    <li><a class="artButton" href="#artistSearch" target="#artistSearch">Artist</a></li>
-                    <li><a class="venButton" href="#venueSearch" target="#venueSearch">Venue</a></li>
-                    <li><a class="citButton" href="#citySearch" target="#citySearch">City</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="" target="_blank">Download</a></li>
-                </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-            </div>
-        </div>
-    </nav>
-</div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
 
-<!--Hero-->
-<div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-
-        <h1 class="text_h center header cd-headline letters type">
-            <span>Find</span> 
-            <span class="cd-words-wrapper waiting">
-                <b class="is-visible">New Artists</b>
-                <b>New Music</b>
-                <b>New Events</b>
-            </span>
-        </h1>
-        <!-- <button class="artButton"><a href="#artTarget">artist</a></button> -->
     </div>
-</div>
+
+    <!--Navigation-->
+    <div class="navbar-fixed">
+        <nav id="nav_f" class="default_color" role="navigation">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <img src="assets/img/soundfire2.png" id="navLogo" class="homeButton">
+                    <a href="#" id="logo-container" class="brand-logo homeButton">SoundFire</a>
+                    
+
+                    <!-- <li><a href="#work">Work</a></li>
+                        <li><a href="#team">Team</a></li> -->
+                        <ul class="right hide-on-med-and-down">
+                           <!-- Dropdown Trigger -->
+                           <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Search<i class="material-icons left">search</i></a></li> 
+                           <ul id="dropdown1" class="dropdown-content"">
+                            <li><a class="artButton" href="#artistSearch" target="#artistSearch">Artist</a></li>
+                            <li><a class="venButton" href="#venueSearch" target="#venueSearch">Venue</a></li>
+                            <li><a class="citButton" href="#citySearch" target="#citySearch">City</a></li>
+                        </ul>   
+                        <li><a class="contButton" href="#contact" target="#contact">Contact<i class="material-icons left">email</i></a></li>
+                        <li><a href="" target="_blank">Download<i class="material-icons left">file_download</i></a></li>
+                    </ul>
+                    <ul id="nav-mobile" class="side-nav">
+                        <li><a class="artButton" href="#artistSearch" target="#artistSearch">Artist</a></li>
+                        <li><a class="venButton" href="#venueSearch" target="#venueSearch">Venue</a></li>
+                        <li><a class="citButton" href="#citySearch" target="#citySearch">City</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="" target="_blank">Download</a></li>
+                    </ul>
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!--Hero-->
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+
+            <h1 class="text_h center header cd-headline letters type">
+                <span>Find</span> 
+                <span class="cd-words-wrapper waiting">
+                    <b class="is-visible">New Artists</b>
+                    <b>New Music</b>
+                    <b>New Events</b>
+                </span>
+            </h1>
+            <!-- <button class="artButton"><a href="#artTarget">artist</a></button> -->
+        </div>
+    </div>
 
 
-<!--Artist Search-->
-<!-- <div class="artTarget"></div> -->
-<div id="artistSearch" class="section scrollspy">
-    <div class="container">
-        <div class="row">
-            <div  class="col s12">
+    <!--Artist Search-->
+    <!-- <div class="artTarget"></div> -->
+    <div id="artistSearch" class="section scrollspy">
+        <div class="container">
+            <div class="row">
+                <div  class="col s12">
                 </div>
                 <h2 class="center header text_h2"> Look up an<span class="span_h2"> Artist  </span></h2>
             </div>
-                <div class="row center">
+            <div class="row center">
 
-          <form method="get" id="search" class="searchBar">
-          <input name="q" type="text" size="40" placeholder="Enter an artist name..." />
-          </form>
-        
+              <form method="get" id="search" class="searchBar">
+                  <input name="q" type="text" size="40" placeholder="Enter an artist name..." />
+              </form>
+
        <!--  <iframe src="https://open.spotify.com/embed?uri=spotify:artist:5K4W6rqBFWDnAN6FQUkS6x"
         frameborder="0" allowtransparency="true"></iframe> -->
-        </div>
     </div>
+</div>
 </div>
 
 <!--Artist Results-->
@@ -96,7 +104,7 @@
             <div class="col s12 m4 l4">
                 <div id="artistName"></div>
             </div>
-           
+
             <div class="col s12 m4 l4">
                 <div id="tour"></div>
             </div>
@@ -117,56 +125,56 @@
                         
                     </div>
                 </div>
-                    <div class="row"></div>
-                    <div class="row">
-         <div class="col s12 m4 l4">
-                <div id="suggestHead"></div>
-            </div>
-        
-    </div>
-    <div class="row">
-        <div class="col s12">
-
-                <div  id="suggest">
-                   
+                <div class="row"></div>
+                <div class="row">
+                 <div class="col s12 m4 l4">
+                    <div id="suggestHead"></div>
                 </div>
-        </div>               
-    </div>
+
             </div>
-            <div class="col s8">   
-        <div class="panel-body">
-          <table class="responsive-table highlight" id='artist-table'>
-            <thead>
-              <tr>
-                <th> Venue </th>
-                <th> Date </th>
-                <th> City </th>
-                <th> Buy Tickets </th>
-              </tr>
+            <div class="row">
+                <div class="col s12">
+
+                    <div  id="suggest">
+
+                    </div>
+                </div>               
+            </div>
+        </div>
+        <div class="col s8">   
+            <div class="panel-body">
+              <table class="responsive-table highlight" id='artist-table'>
+                <thead>
+                  <tr>
+                    <th> Venue </th>
+                    <th> Date </th>
+                    <th> City </th>
+                    <th> Buy Tickets </th>
+                </tr>
             </thead>
 
             <tbody>
             </tbody>
-          </table>
+        </table>
 
-        </div>     
-      </div>      
-    </div>
+    </div>     
+</div>      
+</div>
 
-    <div class="row">
-         <div class="col s12 m4 l4">
-                <div id="suggestHead"></div>
-            </div>
-        
-    </div>
-    <div class="row">
-     <div class="col s12 m4 l4">
+<div class="row">
+ <div class="col s12 m4 l4">
+    <div id="suggestHead"></div>
+</div>
 
-                <div class="card" id="suggest">
-                   
-                </div>
-            </div>               
+</div>
+<div class="row">
+ <div class="col s12 m4 l4">
+
+    <div class="card" id="suggest">
+
     </div>
+</div>               
+</div>
 </div>
 </div>
 <!--Venue Search-->
@@ -174,90 +182,90 @@
     <div class="container">
         <div class="row">
             <div  class="col s12">
-                </div>
-                <h2 class="center header text_h2"> Look up a<span class="span_h2"> Venue  </span></h2>
             </div>
-                <div class="row center">
+            <h2 class="center header text_h2"> Look up a<span class="span_h2"> Venue  </span></h2>
+        </div>
+        <div class="row center">
 
           <form method="get" id="search" class="vsearchBar">
-          <input name="q" type="text" size="40" placeholder="Enter a venue..." />
+              <input name="q" type="text" size="40" placeholder="Enter a venue..." />
           </form>
-        
-        </div>
-    </div>
+
+      </div>
+  </div>
 </div>
 <!--Venue Results-->
 <div id="venueResults" class="section scrollspy">
     <div class="container">
         <div class="row">
-<div class="col s12">
-        <div id="ven">
-        </div>
-        <div class="panel-body">
-          <table class="responsive-table highlight" id='venue-table'>
-            <thead>
-              <tr>
-                <th> Event Name </th>
-                <th> Date </th>
-                <th> City </th>
-                <th> Buy Tickets </th>
-              </tr>
-            </thead>
+            <div class="col s12">
+                <div id="ven">
+                </div>
+                <div class="panel-body">
+                  <table class="responsive-table highlight" id='venue-table'>
+                    <thead>
+                      <tr>
+                        <th> Event Name </th>
+                        <th> Date </th>
+                        <th> City </th>
+                        <th> Buy Tickets </th>
+                    </tr>
+                </thead>
 
-            <tbody>
-            </tbody>
-          </table>
+                <tbody>
+                </tbody>
+            </table>
 
-    </div>
-        </div> 
         </div>
-        </div>
-        </div>    
-      
+    </div> 
+</div>
+</div>
+</div>    
+
 
 <!--City Search-->
 <div id="citySearch" class="section scrollspy">
     <div class="container">
         <div class="row">
             <div  class="col s12">
-                </div>
-                <h2 class="center header text_h2"> Find events near a<span class="span_h2"> City  </span></h2>
             </div>
-                <div class="row center">
+            <h2 class="center header text_h2"> Find events near a<span class="span_h2"> City  </span></h2>
+        </div>
+        <div class="row center">
 
           <form method="get" id="search" class="csearchBar">
-          <input name="q" type="text" size="40" placeholder="Enter a city..." />
+              <input name="q" type="text" size="40" placeholder="Enter a city..." />
           </form>
-        
-        </div>
-    </div>
+
+      </div>
+  </div>
 </div>
 <div id="cityResults" class="section scrollspy">
     <div class="container">
         <div class="row">
-<div class="col s12">
-        <div id="cit">
-        </div>
-        <div class="panel-body">
-          <table class="responsive-table highlight" id='city-table'>
-            <thead>
-              <tr>
-                <th> Event Name </th>
-                <th> Date </th>
-                <th> Venue </th>
-                <th> Buy Tickets </th>
-              </tr>
-            </thead>
+            <div class="col s12">
+                <div id="cit">
+                </div>
+                <div class="panel-body">
+                  <table class="responsive-table highlight" id='city-table'>
+                    <thead>
+                      <tr>
+                        <th> Event Name </th>
+                        <th> Date </th>
+                        <th> Venue </th>
+                        <th> Buy Tickets </th>
+                    </tr>
+                </thead>
 
-            <tbody>
-            </tbody>
-          </table>
+                <tbody>
+                </tbody>
+            </table>
 
-    </div>
-        </div> 
         </div>
-        </div>
-        </div> 
+    </div> 
+</div>
+</div>
+</div> 
 <!--Parallax-->
 <div class="parallax-container">
     <div class="parallax"><img src="assets/img/concert4.jpg"></div>
@@ -440,16 +448,16 @@
         </div>
     </div>
     <div class="footer-copyright default_color">
-      
+
     </div>
 </footer>
 
 
-    <!--  Scripts-->
-    <!-- <script src="assets/min/plugin-min.js"></script> -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="assets/min/custom-min.js"></script>
-    <script src="assets/javascript/app.js"></script>
-    </body>
+<!--  Scripts-->
+<!-- <script src="assets/min/plugin-min.js"></script> -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="assets/min/custom-min.js"></script>
+<script src="assets/javascript/app.js"></script>
+</body>
 </html>
