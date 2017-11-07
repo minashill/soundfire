@@ -27,7 +27,7 @@
     <!--Navigation-->
     <div class="navbar-fixed">
         <nav id="nav_f" class="default_color" role="navigation">
-            <div class="container">
+            <div>
                 <div class="nav-wrapper">
                     <img src="assets/img/soundfire2.png" id="navLogo" class="homeButton">
                     <a href="#" id="logo-container" class="brand-logo homeButton">SoundFire</a>
@@ -36,15 +36,20 @@
                     <!-- <li><a href="#work">Work</a></li>
                         <li><a href="#team">Team</a></li> -->
                         <ul class="right hide-on-med-and-down">
+                            
                            <!-- Dropdown Trigger -->
-                           <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Search<i class="material-icons left">search</i></a></li> 
-                           <ul id="dropdown1" class="dropdown-content"">
+                           <li><a class="dropdown-button" href="#!" data-activates="dropdown">Search <i class = "mdi-navigation-arrow-drop-down right"></i></a></li> 
+                           <ul id="dropdown" class="dropdown-content"">
                             <li><a class="artButton" href="#artistSearch" target="#artistSearch">Artist</a></li>
                             <li><a class="venButton" href="#venueSearch" target="#venueSearch">Venue</a></li>
                             <li><a class="citButton" href="#citySearch" target="#citySearch">City</a></li>
                         </ul>   
-                        <li><a class="contButton" href="#contact" target="#contact">Contact<i class="material-icons left">email</i></a></li>
-                        <li><a href="" target="_blank">Download<i class="material-icons left">file_download</i></a></li>
+                            <li>
+                            <a id="contButton" href="#contact" target="#contact"><i class="material-icons right">email</i>
+                            </a>
+                            </li>
+                            <li><a href="" target="_blank"><i class="material-icons right">file_download</i>
+                            </a></li>
                     </ul>
                     <ul id="nav-mobile" class="side-nav">
                         <li><a class="artButton" href="#artistSearch" target="#artistSearch">Artist</a></li>
@@ -58,19 +63,87 @@
             </div>
         </nav>
     </div>
+<!-- dsg -->
+<div id="contact" class="page-footer default_color scrollspy">
+    <div class="container">  
+        <div class="row">
+            <div class="col l6 s12">
+                <form class="col s12" action="contact.php" method="post">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="mdi-action-account-circle prefix white-text"></i>
+                            <input id="icon_prefix" name="name" type="text" class="validate white-text">
+                            <label for="icon_prefix" class="white-text">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="mdi-communication-email prefix white-text"></i>
+                            <input id="icon_email" name="email" type="email" class="validate white-text">
+                            <label for="icon_email" class="white-text">Email-id</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="mdi-editor-mode-edit prefix white-text"></i>
+                            <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
+                            <label for="icon_prefix2" class="white-text">Message</label>
+                        </div>
+                        <div class="col offset-s7 s5">
+                            <button class="btn waves-effect waves-light red darken-1" type="submit">Submit
+                                <i class="mdi-content-send right white-text"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+           <!--  <div class="col l3 s12">
+                <h5 class="white-text">minashill.com</h5>
+                <ul>
+                    <li><a class="white-text" href="">Home</a></li>
+                    <li><a class="white-text" href="">Blog</a></li>
+                </ul>
+            </div> -->
+            <!-- <div class="col l3 s12">
+                <h5 class="white-text">Social</h5>
+                <ul>
+                    <li>
+                        <a class="white-text" href="https://www.behance.net/joashp">
+                            <i class="small fa fa-behance-square white-text"></i> Behance
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="https://www.facebook.com/joash.c.pereira">
+                            <i class="small fa fa-facebook-square white-text"></i> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="https://github.com/joashp">
+                            <i class="small fa fa-github-square white-text"></i> Github
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="https://www.linkedin.com/in/joashp">
+                            <i class="small fa fa-linkedin-square white-text"></i> Linkedin
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+    <div class="footer-copyright default_color">
 
+    </div>
+</div>
     <!--Hero-->
-    <div class="section no-pad-bot" id="index-banner">
+    <div class="section">
         <div class="container">
 
-            <h1 class="text_h center header cd-headline letters type">
-                <span>Find</span> 
-                <span class="cd-words-wrapper waiting">
-                    <b class="is-visible">New Artists</b>
-                    <b>New Music</b>
-                    <b>New Events</b>
-                </span>
-            </h1>
+             <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s4"><a id="art1" class="artButton active" href="#artistSearch">Artist</a></li>
+        <li class="tab col s4"><a id="ven1" class="venButton" href="#venueSearch">Venue</a></li>
+        <li class="tab col s4"><a id="cit1" class="citButton" href="#citySearch">City</a></li>
+      </ul>
+    </div>
+    </div>
             <!-- <button class="artButton"><a href="#artTarget">artist</a></button> -->
         </div>
     </div>
@@ -268,189 +341,13 @@
 </div> 
 <!--Parallax-->
 <div class="parallax-container">
-    <div class="parallax"><img src="assets/img/concert4.jpg"></div>
+    <div class="parallax"><img src="assets/img/concert4.jpg">
+    </div>
 </div>
 
-<!--Team-->
-<!-- <div class="section scrollspy" id="team">
-    <div class="container">
-        <h2 class="header text_b"> Our Team </h2>
-        <div class="row">
-            <div class="col s12 m3">
-                <div class="card card-avatar">
-                    <div class="waves-effect waves-block waves-light">
-                        <img class="activator" src="assets/img/avatar1.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Flash <br/>
-                            <small><em><a class="red-text text-darken-1" href="#">CEO</a></em></small></span>
-                        <p>
-                            <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
-                                <i class="fa fa-facebook-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
-                                <i class="fa fa-twitter-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
-                                <i class="fa fa-google-plus-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
-                                <i class="fa fa-linkedin-square"></i>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m3">
-                <div class="card card-avatar">
-                    <div class="waves-effect waves-block waves-light">
-                        <img class="activator" src="assets/img/avatar2.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Cat Woman<br/>
-                            <small><em><a class="red-text text-darken-1" href="#">Designer</a></em></small>
-                        </span>
-                        <p>
-                            <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
-                                <i class="fa fa-facebook-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
-                                <i class="fa fa-twitter-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
-                                <i class="fa fa-google-plus-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
-                                <i class="fa fa-linkedin-square"></i>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m3">
-                <div class="card card-avatar">
-                    <div class="waves-effect waves-block waves-light">
-                        <img class="activator" src="assets/img/avatar3.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">
-                            Capt. America <br/>
-                            <small><em><a class="red-text text-darken-1" href="#">CMO</a></em></small></span>
-                        <p>
-                            <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
-                                <i class="fa fa-facebook-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
-                                <i class="fa fa-twitter-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
-                                <i class="fa fa-google-plus-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
-                                <i class="fa fa-linkedin-square"></i>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m3">
-                <div class="card card-avatar">
-                    <div class="waves-effect waves-block waves-light">
-                        <img class="activator" src="assets/img/avatar4.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Robin<br/>
-                            <small><em><a class="red-text text-darken-1" href="#">Developer</a></em></small></span>
-                        <p>
-                            <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
-                                <i class="fa fa-facebook-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://twitter.com/im_joash">
-                                <i class="fa fa-twitter-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://plus.google.com/u/0/+JoashPereira">
-                                <i class="fa fa-google-plus-square"></i>
-                            </a>
-                            <a class="blue-text text-lighten-2" href="https://www.linkedin.com/in/joashp">
-                                <i class="fa fa-linkedin-square"></i>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
+    
 <!--Footer-->
-<footer id="contact" class="page-footer default_color scrollspy">
-    <div class="container">  
-        <div class="row">
-            <div class="col l6 s12">
-                <form class="col s12" action="contact.php" method="post">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="mdi-action-account-circle prefix white-text"></i>
-                            <input id="icon_prefix" name="name" type="text" class="validate white-text">
-                            <label for="icon_prefix" class="white-text">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <i class="mdi-communication-email prefix white-text"></i>
-                            <input id="icon_email" name="email" type="email" class="validate white-text">
-                            <label for="icon_email" class="white-text">Email-id</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="mdi-editor-mode-edit prefix white-text"></i>
-                            <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
-                            <label for="icon_prefix2" class="white-text">Message</label>
-                        </div>
-                        <div class="col offset-s7 s5">
-                            <button class="btn waves-effect waves-light red darken-1" type="submit">Submit
-                                <i class="mdi-content-send right white-text"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">minashill.com</h5>
-                <ul>
-                    <li><a class="white-text" href="">Home</a></li>
-                    <li><a class="white-text" href="">Blog</a></li>
-                </ul>
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Social</h5>
-                <ul>
-                    <li>
-                        <a class="white-text" href="https://www.behance.net/joashp">
-                            <i class="small fa fa-behance-square white-text"></i> Behance
-                        </a>
-                    </li>
-                    <li>
-                        <a class="white-text" href="https://www.facebook.com/joash.c.pereira">
-                            <i class="small fa fa-facebook-square white-text"></i> Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <a class="white-text" href="https://github.com/joashp">
-                            <i class="small fa fa-github-square white-text"></i> Github
-                        </a>
-                    </li>
-                    <li>
-                        <a class="white-text" href="https://www.linkedin.com/in/joashp">
-                            <i class="small fa fa-linkedin-square white-text"></i> Linkedin
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright default_color">
 
-    </div>
-</footer>
 
 
 <!--  Scripts-->

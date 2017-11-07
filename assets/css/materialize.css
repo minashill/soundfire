@@ -5918,7 +5918,7 @@ button.btn-floating {
   will-change: width, height; }
   .dropdown-content li {
     clear: both;
-    color: rgba(0, 0, 0, 0.87);
+    color: red;
     cursor: pointer;
     line-height: 1.5rem;
     width: 100%;
@@ -5928,7 +5928,7 @@ button.btn-floating {
       background-color: #eee; }
     .dropdown-content li > a, .dropdown-content li > span {
       font-size: 1.2rem;
-      color: #26a69a;
+      color: red;
       display: block;
       padding: 1rem 1rem; }
     .dropdown-content li > a > i {

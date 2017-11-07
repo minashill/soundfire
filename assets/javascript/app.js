@@ -241,15 +241,17 @@ function lastFMGetArtistInfo(artist) {
 
 $(".homeButton").on("click", function(event) {
   
-  event.preventDefault();
-  $("#index-banner").css("display", "block");
-  $("#artistSearch").css("display", "none");
-  $("#venueSearch").css("display", "none");
-  $("#citySearch").css("display", "none");
-  $("#cityResults").css("display", "none");
-  $("#artistResults").css("display", "none");
-  $("#venueResults").css("display", "none");
-  $("#contact").css("display", "none");
+  window.location.reload();
+  
+  
+  // $("#index-banner").css("display", "block");
+  // $("#artistSearch").css("display", "block");
+  // $("#venueSearch").css("display", "none");
+  // $("#citySearch").css("display", "none");
+  // $("#cityResults").css("display", "none");
+  // $("#artistResults").css("display", "none");
+  // $("#venueResults").css("display", "none");
+  // $("#contact").css("display", "none");
   
   location.href = "#artistSearch";
    
@@ -302,9 +304,11 @@ $(".citButton").on("click", function(event) {
    
 });
 
-$(".contButton").on("click", function(event) {
+$("#contButton").on("click", function(event) {
   
   event.preventDefault();
+location.href = "#contact";
+  
   $("#contact").css("display", "block");
   $("#index-banner").css("display", "none");
   $("#artistSearch").css("display", "none");
@@ -316,7 +320,7 @@ $(".contButton").on("click", function(event) {
 
  
   
-  location.href = "#citySearch";
+  
    
 });
 //

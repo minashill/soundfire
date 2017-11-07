@@ -1,14 +1,14 @@
 /* Custom Stylesheet */
-/**
- *
- * Made By Joash Pereira
- * Thanks for MaterializeCSS.com
- */
+
+.dropdown-content li>a, .dropdown-content li>span{
+    color: red;
+}
+
  #artistResults{
     display: none;
  }
  #artistSearch{
-    display: none;
+    display: block;
  }
  
  #venueResults{
@@ -94,7 +94,7 @@
 
 nav ul a {
     font-size: 1.2rem;
-    color: #FFF;
+    color: blue;
     letter-spacing: 2px;
     display: block;
     font-weight: 300;
