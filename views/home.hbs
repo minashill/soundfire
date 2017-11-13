@@ -1,0 +1,333 @@
+{{> header }}
+<body id="top" class="scrollspy">
+
+    <!-- Pre Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+
+    <!--Navigation-->
+    <div class="navbar-fixed">
+        <nav id="nav_f" class="default_color" role="navigation">
+            <div>
+                <div class="nav-wrapper">
+                    <img src="assets/img/soundfire2.png" id="navLogo" class="homeButton">
+                    <a href="#" id="logo-container" class="brand-logo homeButton">SoundFire</a>
+                    
+
+                    <!-- <li><a href="#work">Work</a></li>
+                        <li><a href="#team">Team</a></li> -->
+                        <ul class="right hide-on-med-and-down">
+                            
+                           <!-- Dropdown Trigger -->
+                           <li><a class="dropdown-button" href="#!" data-activates="dropdown">Search <i class="mdi-navigation-arrow-drop-down right"></i></a></li> 
+                           <ul id="dropdown" class="dropdown-content">
+                            <li><a class="artButton" href="#artistSearch" target="#artistSearch">Artist</a></li>
+                            <li><a class="venButton" href="#venueSearch" target="#venueSearch">Venue</a></li>
+                            <li><a class="citButton" href="#citySearch" target="#citySearch">City</a></li>
+                        </ul>   
+                            <li>
+                            <a id="contButton" href="#contact" target="#contact"><i class="material-icons right">email</i>
+                            </a>
+                            </li>
+                            <li><a href="" target="_blank"><i class="material-icons right">file_download</i>
+                            </a></li>
+                    </ul>
+                    <ul id="nav-mobile" class="side-nav">
+                        <li><a class="artButton" href="#artistSearch" target="#artistSearch">Artist</a></li>
+                        <li><a class="venButton" href="#venueSearch" target="#venueSearch">Venue</a></li>
+                        <li><a class="citButton" href="#citySearch" target="#citySearch">City</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="" target="_blank">Download</a></li>
+                    </ul>
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+<!-- dsg -->
+<div id="contact" class="page-footer default_color scrollspy">
+    <div class="container">  
+        <div class="row">
+            <div class="col l6 s12">
+                <form class="col s12" action="contact.php" method="post">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="mdi-action-account-circle prefix white-text"></i>
+                            <input id="icon_prefix" name="name" type="text" class="validate white-text">
+                            <label for="icon_prefix" class="white-text">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="mdi-communication-email prefix white-text"></i>
+                            <input id="icon_email" name="email" type="email" class="validate white-text">
+                            <label for="icon_email" class="white-text">Email-id</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="mdi-editor-mode-edit prefix white-text"></i>
+                            <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
+                            <label for="icon_prefix2" class="white-text">Message</label>
+                        </div>
+                        <div class="col offset-s7 s5">
+                            <button class="btn waves-effect waves-light red darken-1" type="submit">Submit
+                                <i class="mdi-content-send right white-text"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+           <!--  <div class="col l3 s12">
+                <h5 class="white-text">minashill.com</h5>
+                <ul>
+                    <li><a class="white-text" href="">Home</a></li>
+                    <li><a class="white-text" href="">Blog</a></li>
+                </ul>
+            </div> -->
+            <!-- <div class="col l3 s12">
+                <h5 class="white-text">Social</h5>
+                <ul>
+                    <li>
+                        <a class="white-text" href="https://www.behance.net/joashp">
+                            <i class="small fa fa-behance-square white-text"></i> Behance
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="https://www.facebook.com/joash.c.pereira">
+                            <i class="small fa fa-facebook-square white-text"></i> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="https://github.com/joashp">
+                            <i class="small fa fa-github-square white-text"></i> Github
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="https://www.linkedin.com/in/joashp">
+                            <i class="small fa fa-linkedin-square white-text"></i> Linkedin
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </div>
+    <div class="footer-copyright default_color">
+
+    </div>
+</div>
+    <!--Hero-->
+    <div class="section">
+        <div class="container">
+
+             <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s4"><a id="art1" class="artButton active" href="#artistSearch">Artist</a></li>
+        <li class="tab col s4"><a id="ven1" class="venButton" href="#venueSearch">Venue</a></li>
+        <li class="tab col s4"><a id="cit1" class="citButton" href="#citySearch">City</a></li>
+      </ul>
+    </div>
+    </div>
+            <!-- <button class="artButton"><a href="#artTarget">artist</a></button> -->
+        </div>
+    </div>
+
+
+    <!--Artist Search-->
+    <!-- <div class="artTarget"></div> -->
+    <div id="artistSearch" class="section scrollspy">
+        <div class="container">
+            <div class="row">
+                <div  class="col s12">
+                </div>
+                <h2 class="center header text_h2"> Look up an<span class="span_h2"> Artist  </span></h2>
+            </div>
+            <div class="row center">
+
+              <form method="get" id="search" class="searchBar">
+                  <input name="q" type="text" size="40" placeholder="Enter an artist name..." />
+              </form>
+
+       <!--  <iframe src="https://open.spotify.com/embed?uri=spotify:artist:5K4W6rqBFWDnAN6FQUkS6x"
+        frameborder="0" allowtransparency="true"></iframe> -->
+    </div>
+</div>
+</div>
+
+<!--Artist Results-->
+<div class="section scrollspy" id="artistResults">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m4 l4">
+                <div id="artistName"></div>
+            </div>
+
+            <div class="col s12 m4 l4">
+                <div id="tour"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m4 l4">
+                <div class="card">
+
+                    <div class="card-image waves-effect waves-block waves-light" id='artistPic'>
+                        <img class="activator" src="assets/img/project1.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Click for Bio <i class="mdi-navigation-more-vert right"></i></span>
+                        
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4" id="bio">Bio<i class="mdi-navigation-close right"></i></span>
+                        
+                    </div>
+                </div>
+                <div class="row"></div>
+                <div class="row">
+                 <div class="col s12 m4 l4">
+                    <div id="suggestHead"></div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col s12">
+
+                    <div  id="suggest">
+
+                    </div>
+                </div>               
+            </div>
+        </div>
+        <div class="col s8">   
+            <div class="panel-body">
+              <table class="responsive-table highlight" id='artist-table'>
+                <thead>
+                  <tr>
+                    <th> Venue </th>
+                    <th> Date </th>
+                    <th> City </th>
+                    <th> Buy Tickets </th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>     
+</div>      
+</div>
+
+<div class="row">
+ <div class="col s12 m4 l4">
+    <div id="suggestHead"></div>
+</div>
+
+</div>
+<div class="row">
+ <div class="col s12 m4 l4">
+
+    <div class="card" id="suggest">
+
+    </div>
+</div>               
+</div>
+</div>
+</div>
+<!--Venue Search-->
+<div id="venueSearch" class="section scrollspy">
+    <div class="container">
+        <div class="row">
+            <div  class="col s12">
+            </div>
+            <h2 class="center header text_h2"> Look up a<span class="span_h2"> Venue  </span></h2>
+        </div>
+        <div class="row center">
+
+          <form method="get" id="search" class="vsearchBar">
+              <input name="q" type="text" size="40" placeholder="Enter a venue..." />
+          </form>
+
+      </div>
+  </div>
+</div>
+<!--Venue Results-->
+<div id="venueResults" class="section scrollspy">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div id="ven">
+                </div>
+                <div class="panel-body">
+                  <table class="responsive-table highlight" id='venue-table'>
+                    <thead>
+                      <tr>
+                        <th> Event Name </th>
+                        <th> Date </th>
+                        <th> City </th>
+                        <th> Buy Tickets </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+    </div> 
+</div>
+</div>
+</div>    
+
+
+<!--City Search-->
+<div id="citySearch" class="section scrollspy">
+    <div class="container">
+        <div class="row">
+            <div  class="col s12">
+            </div>
+            <h2 class="center header text_h2"> Find events near a<span class="span_h2"> City  </span></h2>
+        </div>
+        <div class="row center">
+
+          <form method="get" id="search" class="csearchBar">
+              <input name="q" type="text" size="40" placeholder="Enter a city..." />
+          </form>
+
+      </div>
+  </div>
+</div>
+<div id="cityResults" class="section scrollspy">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div id="cit">
+                </div>
+                <div class="panel-body">
+                  <table class="responsive-table highlight" id='city-table'>
+                    <thead>
+                      <tr>
+                        <th> Event Name </th>
+                        <th> Date </th>
+                        <th> Venue </th>
+                        <th> Buy Tickets </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+    </div> 
+</div>
+</div>
+</div> 
+<!--Parallax-->
+<div class="parallax-container">
+    <div class="parallax"><img src="assets/img/concert4.jpg">
+    </div>
+</div>
+{{> footer-end }}
