@@ -44,6 +44,17 @@ router.post('/register', function(req, res, next) {
             throw new Error(); 
         });
 });
+	// user.findOne({
+	// 	where: {
+	// 		email: email
+	// 	}
+	// }).then(function(user) {
+	// 	if (user) {
+	// 		return done(null, false, {
+	// 			message: 'That email is already taken'
+	// 		});
+	// 	}
+	// })
 	users.create({
 		first_name: req.body.first_name,
 		last_name: req.body.last_name,
@@ -51,6 +62,13 @@ router.post('/register', function(req, res, next) {
 		password: req.body.password
 	}).then(function(results){
 		res.render('register', { title: 'Sign Up Complete!' });
+		if (!new user) {
+			return done(null, false);
+		}
+		if (new user) {
+			return done(null, new user);
+		}
+
 	});
 // });
 }
