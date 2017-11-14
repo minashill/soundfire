@@ -12,6 +12,8 @@ var Sequelize = require("sequelize");
 
 /* GET home page. */
 router.get('/', function(req, res) {
+	console.log(req.user);
+	console.log(req.isAuthenticated());
 	res.render('home'/*, { title: 'Sign Up' }*/);
 });
 
@@ -59,22 +61,21 @@ router.post('/register', function(req, res, next) {
 		req.login(newUser.id, function(err) {
 			if (err) throw err;
 			res.render('register', { title: 'Sign up Complete!', user: newUser});
+			 res.redirect('/');
 		});
+
 	});
-		res.redirect('/');
 
 // });
 }
 });
-
-passport.serializeUser(function(user_id, done) {
-	done(null, user_id);
+passport.serializeUser(function(newUser, done) {
+  done(null, newUser);
 });
 
-passport.deserializeUser(function(user_id, done) {
-	User.findById(id, function (err, user) {
-		done(err, user_id);
-	});
-});
+passport.deserializeUser(function(newUser, done) {
+    done(null, newUser);
+  });
+
 
 module.exports = router;

@@ -36,7 +36,7 @@ app.use(session({
   secret: 'alksjdagjsdl',
   resave: false,
   saveUninitialized: false,
-  // cookie: { secure: true }
+  cookie: { secure: true }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
