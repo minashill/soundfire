@@ -30,6 +30,8 @@ app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// //For Passport
 app.use(session({
   secret: 'alksjdagjsdl',
   resave: false,
@@ -38,6 +40,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 app.use('/', index);
 app.use('/users', users);

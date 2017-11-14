@@ -4,6 +4,10 @@ var users = require("../models/usersmodel.js");
 const expressValidator = require('express-validator');
 var bcrypt = require('bcrypt');
 const saltRounds = 10;
+var passport = require('passport');
+var Sequelize = require("sequelize");
+
+
 
 
 /* GET home page. */
@@ -33,46 +37,44 @@ router.post('/register', function(req, res, next) {
 			errors: errors
 		});
 	} else {
+		// const db = require('../db.js');
 // bcrypt.hash(password, saltRounds, function(err, hash) {
 	users.beforeCreate((user, options) => {
 
-    return bcrypt.hash(user.password, 10)
-        .then(hash => {
-            user.password = hash;
-        })
-        .catch(err => { 
-            throw new Error(); 
-        });
-});
-	// user.findOne({
-	// 	where: {
-	// 		email: email
-	// 	}
-	// }).then(function(user) {
-	// 	if (user) {
-	// 		return done(null, false, {
-	// 			message: 'That email is already taken'
-	// 		});
-	// 	}
-	// })
+		return bcrypt.hash(user.password, 10)
+		.then(hash => {
+			user.password = hash;
+		})
+		.catch(err => { 
+			throw new Error(); 
+		});
+	});
 	users.create({
 		first_name: req.body.first_name,
 		last_name: req.body.last_name,
 		email: req.body.email,
 		password: req.body.password
-	}).then(function(results){
-		res.render('register', { title: 'Sign Up Complete!' });
-		if (!new user) {
-			return done(null, false);
-		}
-		if (new user) {
-			return done(null, new user);
-		}
-
+	}).then(function(user) {
+		var newUser = user.get({plain: true});
+		req.login(newUser.id, function(err) {
+			if (err) throw err;
+			res.render('register', { title: 'Sign up Complete!', user: newUser});
+		});
 	});
+		res.redirect('/');
+
 // });
 }
 });
 
+passport.serializeUser(function(user_id, done) {
+	done(null, user_id);
+});
+
+passport.deserializeUser(function(user_id, done) {
+	User.findById(id, function (err, user) {
+		done(err, user_id);
+	});
+});
 
 module.exports = router;

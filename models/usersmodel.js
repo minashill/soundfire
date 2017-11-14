@@ -16,12 +16,12 @@ var users = db.define("users", {
   },
   email: {
     type: Sequelize.STRING,
-    // allowNull: false,
-    //     isUnique: true,
-    //     validate: {
-    //         isEmail: true,
-    //         isUnique: sequelize.validateIsUnique('email')
-    //     }
+    allowNull: false,
+    unique: true,
+        // validate: {
+        //     isEmail: true,
+        //     isUnique: Sequelize.validateIsUnique('email')
+        // }
   },
   password: {
     type: Sequelize.STRING

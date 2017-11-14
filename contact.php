@@ -79,7 +79,7 @@ if(isset($_POST['email'])) {
  
  
  
-<!-- include your own success html here -->
+<!-- success html here -->
  
  
  
