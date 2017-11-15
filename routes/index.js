@@ -6,6 +6,8 @@ var bcrypt = require('bcrypt');
 const saltRounds = 10;
 var passport = require('passport');
 var Sequelize = require("sequelize");
+var session = require('express-session');
+
 
 
 
@@ -58,9 +60,9 @@ router.post('/register', function(req, res, next) {
 		password: req.body.password
 	}).then(function(user) {
 		var newUser = user.get({plain: true});
-		req.login(newUser.id, function(err) {
+		console.log('newUser', newUser);
+		req.login(newUser, function(err) {
 			if (err) throw err;
-			res.render('register', { title: 'Sign up Complete!', user: newUser});
 			 res.redirect('/');
 		});
 
@@ -69,13 +71,6 @@ router.post('/register', function(req, res, next) {
 // });
 }
 });
-passport.serializeUser(function(newUser, done) {
-  done(null, newUser);
-});
-
-passport.deserializeUser(function(newUser, done) {
-    done(null, newUser);
-  });
 
 
 module.exports = router;
