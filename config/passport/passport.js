@@ -16,15 +16,5 @@ passport.use(new LocalStrategy(
 ));
 
 
-passport.serializeUser(function(user, done) {
-	console.log('serialize user: ',user);
-  done(null, user.id);
-});
 
-passport.deserializeUser(function(id, done) {
-	console.log('deserialize user:', id);
-  users.findById(id, function (err, user) {
-    done(err, user);
-  });
-});
 }

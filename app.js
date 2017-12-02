@@ -1,19 +1,22 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 
 //Auth packages//
-var session = require('express-session');
-var passport = require('passport');
+const session = require('express-session');
+const passport = require('passport');
 require('./config/passport/passport')(passport);
-var index = require('./routes/index');
-var users = require('./routes/users');
 
-var app = express();
+const bcrypt = require('bcrypt');
+
+const index = require("./routes/index");
+const users = require("./routes/users");
+
+const app = express();
 
 require('dotenv').config();
 
@@ -33,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // //For Passport
 app.use(session({
+  
   secret: 'alksjdagjsdl',
   resave: false,
   saveUninitialized: false,
@@ -41,6 +45,14 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// pass auth state to every view
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.isAuthenticated();
+  next();
+})
+
+app.use('/', index);
+app.use('/users', loggedIn, users);
 
 function loggedIn(req, res, next) {
   if (req.user) {
@@ -50,9 +62,14 @@ function loggedIn(req, res, next) {
   }
 }
 
+app.post('/signup', passport.authenticate('local-signup', {
+        successRedirect : '/profile', // redirect to the secure profile section
+        failureRedirect : '/signup', // redirect back to the signup page if there is an error
+        failureFlash : true // allow flash messages
+    }));
 
-app.use('/', index);
-app.use('/users', loggedIn, users);
+
+
 
 
 // catch 404 and forward to error handler

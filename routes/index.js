@@ -12,18 +12,43 @@ var session = require('express-session');
 
 
 
-/* GET home page. */
-router.get('/', function(req, res) {
-	console.log(req.user);
-	console.log(req.isAuthenticated());
-	res.render('home'/*, { title: 'Sign Up' }*/);
+/* GET / */
+router.get("/", (req, res) => {
+  console.log(req.user);
+  console.log(req.isAuthenticated());
+  res.render("home", { title: "Home" });
 });
 
-router.get('/register', function(req, res, next) {
-	res.render('register', { title: 'Sign Up' });
-});
+/* GET /profile */
+router.get("/profile", (req, res) => {
+  res.render("profile", { title: "Profile" });
+})
 
-router.post('/register', function(req, res, next) {
+
+/* GET /login */
+router.get("/login", (req, res) => {
+  res.render("login", { title: "Login" });
+})
+
+/* POST /login */
+router.post("/login", passport.authenticate('local', {
+  successRedirect: '/profile',
+  failureRedirect: '/login'
+}))
+
+/* GET /logout */
+router.get("/logout", (req, res) => {
+  req.logout();
+  req.session.destroy();
+  res.redirect("/");
+})
+
+/* GET /register */
+router.get("/register", (req, res) => {
+  res.render("register", { title: "Registration" });
+})
+
+router.post("/register", (req, res) => {
 
 	req.checkBody('email', 'The email you entered is invalid, please try again.').isEmail();
 	req.checkBody('email', 'Email address must be between 4-100 characters long, please try again.').len(4, 100);
@@ -61,16 +86,36 @@ router.post('/register', function(req, res, next) {
 	}).then(function(user) {
 		var newUser = user.get({plain: true});
 		console.log('newUser', newUser);
-		req.login(newUser, function(err) {
-			if (err) throw err;
-			 res.redirect('/');
+		req.login(newUser, err => {
+		 	req.session.save(function(){
+              
+			console.log('err', err);
+			
+		 });
+
+
 		});
 
 	});
+	passport.serializeUser(function(user, done) {
+	console.log('serialize user: ',user);
+  done(null, user.id);
+});
 
+passport.deserializeUser(function(id, done) {
+	console.log('deserialize user:', id);
+  users.findById(id, function (err, user) {
+    done(err, user);
+  });
+});
+console.log(req.user);
+res.redirect('/profile');
 // });
 }
+
 });
 
 
 module.exports = router;
+
+	
